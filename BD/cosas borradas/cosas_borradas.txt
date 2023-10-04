@@ -1,0 +1,31 @@
+Parte de empresa: 
+
+
+-- CREATE TABLE Empresa (
+--   ID_Empresa INT PRIMARY KEY AUTO_INCREMENT,
+--   Nombre VARCHAR(100),
+--   Sector VARCHAR(100)
+-- );
+
+-- CREATE TABLE Producto (
+--   ID_Producto INT PRIMARY KEY AUTO_INCREMENT,
+--   Nombre VARCHAR(50),
+--   Precio DECIMAL(10, 2),
+--   ID_Empresa INT,
+--   FOREIGN KEY (ID_Empresa) REFERENCES Empresa(ID_Empresa)
+
+-- );
+
+-- CREATE TABLE Cliente_Producto (
+--   ID_Cliente_Producto INT PRIMARY KEY AUTO_INCREMENT,
+--   ID_Cliente INT,
+--   ID_Producto INT,
+--   FOREIGN KEY (ID_Cliente) REFERENCES Cliente(ID_Cliente),
+--   FOREIGN KEY (ID_Producto) REFERENCES Producto(ID_Producto)
+-- );
+
+-- CREATE TABLE Impuesto (
+--   ID_Impuesto INT PRIMARY KEY AUTO_INCREMENT,
+--   Tipo VARCHAR(100),
+--   Tasa DECIMAL(5, 2)
+-- );

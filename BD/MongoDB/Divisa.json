@@ -1,0 +1,51 @@
+[
+    {
+      "Codigo": "USD",
+      "Tasa_cambio": 1.0000
+    },
+    {
+      "Codigo": "EUR",
+      "Tasa_cambio": 1.1000
+    },
+    {
+      "Codigo": "Divisa A",
+      "Tasa_cambio": 100
+    },
+    {
+      "Codigo": "Divisa B",
+      "Tasa_cambio": 200
+    },
+    {
+      "Codigo": "Divisa C",
+      "Tasa_cambio": 300
+    },
+    {
+      "Codigo": "Divisa D",
+      "Tasa_cambio": 400
+    },
+    {
+      "Codigo": "Divisa E",
+      "Tasa_cambio": 500
+    },
+    {
+      "Codigo": "Divisa F",
+      "Tasa_cambio": 600
+    },
+    {
+      "Codigo": "Divisa G",
+      "Tasa_cambio": 700
+    },
+    {
+      "Codigo": "Divisa H",
+      "Tasa_cambio": 800
+    },
+    {
+      "Codigo": "Divisa I",
+      "Tasa_cambio": 900
+    },
+    {
+      "Codigo": "Divisa J",
+      "Tasa_cambio": 1000
+    }
+  ]
+  

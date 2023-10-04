@@ -1,0 +1,15 @@
+[
+    { "Nombre": "Banco Santander", "Sede": "Santander"},
+    { "Nombre": "Barclays", "Sede": "Londres"},
+    { "Nombre": "BNP Paribas", "Sede": "Paris" },
+    { "Nombre": "Crédit Agricole", "Sede": "Paris" },
+    { "Nombre": "UBS", "Sede": "Zürich" },
+    { "Nombre": "Deutsche Bank", "Sede": "Frankfurt" },
+    { "Nombre": "Lloyds Banking Group", "Sede": "Londres" },
+    { "Nombre": "Intensa Sanpaolo", "Sede": "Turin" },
+    { "Nombre": "Banco Bilbao", "Sede": "Bilbao" },
+    { "Nombre": "Rabobank", "Sede": "Utrecht" },
+    { "Nombre": "DZ Bank", "Sede": "Frankfurt" },
+    { "Nombre": "Banco Nacional Checo", "Sede": "Praga" }
+  ]
+  

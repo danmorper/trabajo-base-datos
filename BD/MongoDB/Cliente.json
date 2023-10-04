@@ -1,0 +1,14 @@
+[
+    { "Nombre": "Juan", "Apellido": "Pérez", "Fecha_nacimiento": "1985-01-15", "ID_Cliente": 1 },
+    { "Nombre": "Ana", "Apellido": "García", "Fecha_nacimiento": "1990-06-22", "ID_Cliente": 2 },
+    { "Nombre": "Antonio", "Apellido": "García", "Fecha_nacimiento": "1970-01-01" },
+    { "Nombre": "Maximiliam", "Apellido": "Müller", "Fecha_nacimiento": "1990-01-01" },
+    { "Nombre": "Alexander", "Apellido": "Zelensky", "Fecha_nacimiento": "1986-01-01" },
+    { "Nombre": "Marilyn", "Apellido": "Monroe", "Fecha_nacimiento": "1926-01-01" },
+    { "Nombre": "Donald", "Apellido": "Trump", "Fecha_nacimiento": "1946-01-01" },
+    { "Nombre": "Jorge Mario", "Apellido": "Bergoglio", "Fecha_nacimiento": "1936-01-01" },
+    { "Nombre": "Dalia", "Apellido": "Lama", "Fecha_nacimiento": "1938-01-01" },
+    { "Nombre": "Vladimir", "Apellido": "Putin", "Fecha_nacimiento": "1952-01-01" },
+    { "Nombre": "Alex", "Apellido": "elcapo", "Fecha_nacimiento": "1987-10-06" },
+    { "Nombre": "Joanne", "Apellido": "Rowling", "Fecha_nacimiento": "1965-07-31" }
+  ]
