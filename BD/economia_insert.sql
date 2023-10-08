@@ -69,19 +69,6 @@ VALUES ("2023-03-01", 100.00, "Pago de factura", 1, 1),
        ("2020-01-01", 1000, "Descripcion J", 10, 2);
 
 
-INSERT INTO Empleado (Nombre, Apellido, ID_Banco) 
-VALUES ("Pedro", "Martínez", 1),
-       ("Carla", "Fernández", 1),
-       ("Luis", "González", 2), 
-       ("Angelina", "Jolie", 1), ("Ariana", "Grande", 2), 
-       ("Bruce", "Willis", 3), ("Cristiano", "Ronaldo", 4), 
-       ("Ed", "Sheeran", 5), ("George", "Lucas", 6), 
-       ("Johnny", "Depp", 7), ("Kylian", "Mbappé", 8), 
-       ("Mohamed", "bin Salmán", 9), ("Michael", "Caine", 10);
-
-
-
-
 INSERT INTO Prestamo (Monto, Fecha_inicio, Fecha_vencimiento, ID_Cliente, ID_Divisa)
 VALUES (100, "2020-01-01", "2020-01-01", 1, 1), (200, "2020-01-01", "2020-01-01", 10, 3);
 
@@ -162,4 +149,22 @@ VALUES (1, 7),
 INSERT INTO Cliente_Prestamo_Banco (ID_Cliente, ID_Prestamo, ID_Banco)
 VALUES (1,1,1), (10,1,5);
 
--- Mirar si los valores de Cliente_Prestamo_Banco tienen sentido
+
+INSERT INTO Empleado (Nombre, Apellido, ID_Banco) 
+VALUES ("Pedro", "Martínez", 1),
+       ("Carla", "Fernández", 1),
+       ("Luis", "González", 2), 
+       ("Angelina", "Jolie", 1), ("Ariana", "Grande", 2), 
+       ("Bruce", "Willis", 3), ("Cristiano", "Ronaldo", 4), 
+       ("Ed", "Sheeran", 5), ("George", "Lucas", 6), 
+       ("Johnny", "Depp", 7), ("Kylian", "Mbappé", 8), 
+       ("Mohamed", "bin Salmán", 9), ("Michael", "Caine", 10);
+
+INSERT INTO Supervisor (ID_Empleado) 
+VALUES (4), (9), (12);
+
+
+INSERT INTO Miembro_equipo (ID_Empleado, ID_Supervisor) 
+VALUES (1,1), (2,1), (3,1), -- ID_Supervisor 1 es ID_Empleado 4
+(5,2), (6,2), (7,2), (8,2), -- ID_Supervisor 2 es ID_Empleado 9
+(10,3), (11,3), (13,3); -- ID_Supervisor 3 es ID_Empleado 12

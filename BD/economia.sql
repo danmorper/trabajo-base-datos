@@ -1,14 +1,21 @@
 -- Crear la base de datos
-CREATE DATABASE EconomiaDB_prueba;
+CREATE DATABASE EconomiaDB;
 
 -- Usar la base de datos creada
-USE EconomiaDB_prueba;
+USE EconomiaDB;
 
 -- Crear las tablas
+
+CREATE TABLE Divisa (
+  ID_Divisa INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  Codigo VARCHAR(8),
+  Tasa_cambio DECIMAL(10, 4)
+);
+
 CREATE TABLE Pais (
   ID_Pais INT PRIMARY KEY AUTO_INCREMENT,
   Nombre VARCHAR(50), -- 50 caracteres
-  Poblacion DECIMAL(10, 2) -- 10 dígitos (antes de la coma), 2 decimales (después de la coma)
+  Poblacion DECIMAL(10, 2), -- 10 dígitos (antes de la coma), 2 decimales (después de la coma)
   ID_Divisa INT,
   FOREIGN KEY (ID_Divisa) REFERENCES Divisa(ID_Divisa)
 );
@@ -26,12 +33,6 @@ CREATE TABLE Banco_Pais (
   ID_Pais INT,
   FOREIGN KEY (ID_Banco) REFERENCES Banco(ID_Banco), -- ON DELETE SET NULL? no me queda claro qué hace
   FOREIGN KEY (ID_Pais) REFERENCES Pais(ID_Pais)
-);
-
-CREATE TABLE Divisa (
-  ID_Divisa INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  Codigo VARCHAR(8),
-  Tasa_cambio DECIMAL(10, 4)
 );
 
 CREATE TABLE Cliente (
@@ -112,7 +113,7 @@ CREATE TABLE Empleado (
   FOREIGN KEY (ID_Banco) REFERENCES Banco(ID_Banco)
 );
 
--- Relación jerárquica entre supervisor y empleado
+-- Relación jerárquica entre Empleado y [supervisor y miembro de equipo]
 CREATE TABLE Supervisor (
   ID_Supervisor INT PRIMARY KEY AUTO_INCREMENT,
   ID_Empleado INT,
@@ -127,4 +128,3 @@ CREATE TABLE Miembro_equipo (
   FOREIGN KEY (ID_Supervisor) REFERENCES supervisor(ID_Supervisor)
 );
 
--- Pasar de aquí a tablas en mysql workbench (reverse engeneering)

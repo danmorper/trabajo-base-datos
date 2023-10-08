@@ -23,7 +23,7 @@ formulario.addEventListener("submit", function (e) {
                 <td>${element.Nombre}</td>
                 <td>${element.Apellido}</td>
                 <td>${element.Fecha_nacimiento}</td>
-                <\tr>
+                </tr>
             `
             })
         })
