@@ -1,15 +1,95 @@
 [
-    { "Nombre": "Banco Santander", "Sede": "Santander"},
-    { "Nombre": "Barclays", "Sede": "Londres"},
-    { "Nombre": "BNP Paribas", "Sede": "Paris" },
-    { "Nombre": "Crédit Agricole", "Sede": "Paris" },
-    { "Nombre": "UBS", "Sede": "Zürich" },
-    { "Nombre": "Deutsche Bank", "Sede": "Frankfurt" },
-    { "Nombre": "Lloyds Banking Group", "Sede": "Londres" },
-    { "Nombre": "Intensa Sanpaolo", "Sede": "Turin" },
-    { "Nombre": "Banco Bilbao", "Sede": "Bilbao" },
-    { "Nombre": "Rabobank", "Sede": "Utrecht" },
-    { "Nombre": "DZ Bank", "Sede": "Frankfurt" },
-    { "Nombre": "Banco Nacional Checo", "Sede": "Praga" }
+    { 
+      "Nombre": "Banco Santander", 
+      "Sede": "Santander",
+      "Pais": [
+        1,3,6,7,8,11
+      ]
+    },
+
+    { 
+      "Nombre": "Barclays", 
+      "Sede": "Londres",
+      "Pais":[
+        6,1,7,8,11,12
+      ]
+    },
+
+    { 
+      "Nombre": "BNP Paribas", 
+      "Sede": "Paris",
+      "Pais":[
+        8,1,2,3,4,5,6,10
+      ]
+    },
+
+    { 
+      "Nombre": "Crédit Agricole", 
+      "Sede": "Paris",
+      "Pais":[
+        1,2,3,4,5,6,7,8,9,10,11,12
+      ] 
+    },
+
+    { 
+      "Nombre": "UBS", 
+      "Sede": "Zürich", 
+      "Pais":[
+        2,7,8
+      ]
+    },
+
+    { 
+      "Nombre": "Deutsche Bank", 
+      "Sede": "Frankfurt",
+      "Pais":[
+        11,1,3,7,8,12
+      ]
+    
+    },
+
+    { 
+      "Nombre": "Lloyds Banking Group", 
+      "Sede": "Londres",
+      "Pais":[
+        1,3,7,8,11,12
+      ]
+    },
+
+    { 
+      "Nombre": "Intensa Sanpaolo", 
+      "Sede": "Turin",
+      "Pais":[
+        7,2,3,5,8,9,11,12
+      ]
+    },
+
+    { 
+      "Nombre": "Banco Bilbao", 
+      "Sede": "Bilbao",
+      "Pais":[
+        3,7,8,11
+      ]
+    },
+
+    { 
+      "Nombre": "Rabobank", 
+      "Sede": "Utrecht",
+      "Pais":[
+        5,3,4,6,8
+      ]
+    },
+    { 
+      "Nombre": "DZ Bank", 
+      "Sede": "Frankfurt",
+      "Pais":[
+        3, 7, 8, 11
+      ]},
+    { 
+      "Nombre": "Banco Nacional Checo", 
+      "Sede": "Praga",
+      "Pais":[
+         5,  3,  4,  6,  8
+      ]}
   ]
   

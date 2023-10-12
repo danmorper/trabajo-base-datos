@@ -1,14 +1,109 @@
 [
-    { "Nombre": "España", "Poblacion": 47.0 },
-    { "Nombre": "Reino Unido", "Poblacion": 67.0 },
-    { "Nombre": "Alemania", "Poblacion": 83.2 },
-    { "Nombre": "Polonia", "Poblacion": 37.75 },
-    { "Nombre": "República Checa", "Poblacion": 10.51 },
-    { "Nombre": "Francia", "Poblacion": 67.75 },
-    { "Nombre": "Paises Bajos", "Poblacion": 17.53 },
-    { "Nombre": "Suiza", "Poblacion": 8.703 },
-    { "Nombre": "Noruega", "Poblacion": 5.4 },
-    { "Nombre": "Suecia", "Poblacion": 10.42 },
-    { "Nombre": "Italia", "Poblacion": 59.11 },
-    { "Nombre": "Grecia", "Poblacion": 10.64 }
+    { 
+        "Nombre": "España", 
+        "Poblacion": 47.0,
+        "Divisa": {
+            "Codigo": "EUR",
+            "Tasa_cambio": 1.0
+        }
+    },
+
+    { 
+        "Nombre": "Reino Unido", 
+        "Poblacion": 67.0,
+        "Divisa": {
+            "Codigo": "GBP",
+            "Tasa_cambio": 1.15
+        }
+    },
+
+    { 
+        "Nombre": "Alemania", 
+        "Poblacion": 83.2,
+        "Divisa": {
+            "Codigo": "EUR",
+            "Tasa_cambio": 1.0
+        }
+    },
+
+    { 
+        "Nombre": "Polonia", 
+        "Poblacion": 37.75,
+        "Divisa": {
+            "Codigo": "PLN",
+            "Tasa_cambio": 0.22
+        }
+    },
+
+    { 
+        "Nombre": "República Checa", 
+        "Poblacion": 10.51,
+        "Divisa": {
+            "Codigo": "CZK",
+            "Tasa_cambio": 0.041
+        }
+    },
+
+    { 
+        "Nombre": "Francia", 
+        "Poblacion": 67.75,
+        "Divisa": {
+            "Codigo": "EUR",
+            "Tasa_cambio": 1.0
+        }
+    },
+
+    { 
+        "Nombre": "Paises Bajos", 
+        "Poblacion": 17.53,
+        "Divisa": {
+            "Codigo": "EUR",
+            "Tasa_cambio": 1.0
+        } 
+    
+    },
+
+    { 
+        "Nombre": "Suiza", 
+        "Poblacion": 8.703,
+        "Divisa": {
+            "Codigo": "CHF",
+            "Tasa_cambio": 1.04
+        }
+    },
+
+    { 
+        "Nombre": "Noruega", 
+        "Poblacion": 5.4,
+        "Divisa": {
+            "Codigo": "NOK",
+            "Tasa_cambio": 0.088
+        }
+    },
+
+    { 
+        "Nombre": "Suecia", 
+        "Poblacion": 10.42,
+        "Divisa": {
+            "Codigo": "SEK",
+            "Tasa_cambio": 0.086
+        }
+    },
+
+    { 
+        "Nombre": "Italia", 
+        "Poblacion": 59.11,
+        "Divisa": {
+            "Codigo": "EUR",
+            "Tasa_cambio": 1.0
+        }
+    },
+    { 
+        "Nombre": "Grecia", 
+        "Poblacion": 10.64,
+        "Divisa": {
+            "Codigo": "EUR",
+            "Tasa_cambio": 1.0
+        }
+    }
 ]

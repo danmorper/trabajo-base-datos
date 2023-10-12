@@ -97,13 +97,15 @@ CREATE TABLE Cliente_Prestamo_Banco (
   FOREIGN KEY (ID_Banco) REFERENCES Banco(ID_Banco)
 );
 
-CREATE TABLE Cliente_Banco (
-  ID_Cliente_Banco INT PRIMARY KEY AUTO_INCREMENT,
-  ID_Cliente INT,
-  ID_Banco INT,
-  FOREIGN KEY (ID_Cliente) REFERENCES Cliente(ID_Cliente),
-  FOREIGN KEY (ID_Banco) REFERENCES Banco(ID_Banco)
-);
+-- Cliente_Banco no existe porque no hay relacion N:M entre Cliente y Banco
+
+-- CREATE TABLE Cliente_Banco (
+--   ID_Cliente_Banco INT PRIMARY KEY AUTO_INCREMENT,
+--   ID_Cliente INT,
+--   ID_Banco INT,
+--   FOREIGN KEY (ID_Cliente) REFERENCES Cliente(ID_Cliente),
+--   FOREIGN KEY (ID_Banco) REFERENCES Banco(ID_Banco)
+-- );
 
 CREATE TABLE Empleado (
   ID_Empleado INT PRIMARY KEY AUTO_INCREMENT,

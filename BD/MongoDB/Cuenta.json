@@ -1,53 +1,157 @@
 [
     {
       "Tipo": "Ahorros",
-      "Balance": 100,
-      "ID_Cliente": 1
+      "Balance": 1500.00,
+      "ID_Banco": 1,
+      "Divisa": {
+        "Codigo": "EUR",
+        "Tasa_cambio": 1.0
     },
+      "ID_Cliente": [
+        1,2
+      ]
+    },
+
     {
       "Tipo": "Corriente",
-      "Balance": 200,
-      "ID_Cliente": 2
+      "Balance": 500.00,
+      "ID_Banco": 2,
+      "Divisa": {
+        "Codigo": "GBP",
+        "Tasa_cambio": 1.15
+    },
+      "ID_Cliente": [
+        3,4
+      ]
+    },
+
+    {
+      "Tipo": "Ahorros",
+      "Balance": 2000.00,
+      "ID_Banco": 3,
+      "Divisa": {
+        "Codigo": "EUR",
+        "Tasa_cambio": 1.0
+    },
+      "ID_Cliente": [
+        5,6
+      ]
+    },
+
+    {
+      "Tipo": "Corriente",
+      "Balance": 50000.00,
+      "ID_Banco": 5,
+      "Divisa": {
+            "Codigo": "EUR",
+            "Tasa_cambio": 1.0
+        },
+      "ID_Cliente": [
+
+      ]
+    },
+
+    {
+      "Tipo": "Ahorros",
+      "Balance": 200.00,
+      "ID_Banco": 9,
+      "Divisa": {
+            "Codigo": "EUR",
+            "Tasa_cambio": 1.0
+        },
+      "ID_Cliente": [
+
+      ]
     },
     {
       "Tipo": "Ahorros",
-      "Balance": 300,
-      "ID_Cliente": 3
+      "Balance": 300.00,
+      "ID_Banco": 6,
+      "Divisa": {
+            "Codigo": "EUR",
+            "Tasa_cambio": 1.0
+        },
+      "ID_Cliente": [
+
+      ]
     },
+
     {
       "Tipo": "Corriente",
-      "Balance": 40000,
-      "ID_Cliente": 4
+      "Balance": 40000.00,
+      "ID_Banco": 4,
+      "Divisa": {
+            "Codigo": "EUR",
+            "Tasa_cambio": 1.0
+        },
+      "ID_Cliente": [
+
+      ]
     },
+
     {
       "Tipo": "Ahorros",
-      "Balance": 500,
-      "ID_Cliente": 5
+      "Balance": 500.00,
+      "ID_Banco": 5,
+      "Divisa": {
+            "Codigo": "CHF",
+            "Tasa_cambio": 1.04
+        },
+      "ID_Cliente": [
+        10,13
+      ]
     },
+
     {
       "Tipo": "Corriente",
-      "Balance": -100,
-      "ID_Cliente": 6
+      "Balance": -100.00,
+      "ID_Banco": 6,
+      "Divisa": {
+            "Codigo": "EUR",
+            "Tasa_cambio": 1.0
+        },
+      "ID_Cliente": [
+        7,8
+      ]
     },
+
     {
       "Tipo": "Ahorros",
-      "Balance": 700,
-      "ID_Cliente": 7
+      "Balance": 700.00,
+      "ID_Banco": 7,
+      "Divisa": {
+            "Codigo": "GBP",
+            "Tasa_cambio": 1.15
+        },
+      "ID_Cliente": [
+
+      ]
     },
-    {
-      "Tipo": "Corriente",
-      "Balance": 800,
-      "ID_Cliente": 8
-    },
+
     {
       "Tipo": "Ahorros",
-      "Balance": 900,
-      "ID_Cliente": 9
+      "Balance": 900.00,
+      "ID_Banco": 10,
+      "Divisa": {
+            "Codigo": "EUR",
+            "Tasa_cambio": 1.0
+        },
+      "ID_Cliente": [
+
+      ]
     },
+
     {
       "Tipo": "Corriente",
-      "Balance": -30000,
-      "ID_Cliente": 10
+      "Balance": -30000.00,
+      "ID_Banco": 12,
+      "Divisa": {
+            "Codigo": "CZK",
+            "Tasa_cambio": 0.041
+        },
+      "ID_Cliente": [
+
+      ]
     }
   ]
   

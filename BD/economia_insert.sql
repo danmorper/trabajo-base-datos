@@ -1,3 +1,4 @@
+USE EconomiaDB;
 -- Resetear autoincremento de las tablas
 ALTER TABLE Pais AUTO_INCREMENT = 1;
 ALTER TABLE Banco AUTO_INCREMENT = 1;
@@ -5,7 +6,7 @@ ALTER TABLE Banco_Pais AUTO_INCREMENT = 1;
 ALTER TABLE Cliente AUTO_INCREMENT = 1;
 ALTER TABLE Prestamo AUTO_INCREMENT = 1;
 ALTER TABLE Cliente_Prestamo_Banco AUTO_INCREMENT = 1;
-ALTER TABLE Cliente_Banco AUTO_INCREMENT = 1;
+-- ALTER TABLE Cliente_Banco AUTO_INCREMENT = 1;
 ALTER TABLE Cuenta AUTO_INCREMENT = 1;
 ALTER TABLE Cliente_Cuenta AUTO_INCREMENT = 1;
 ALTER TABLE Transaccion AUTO_INCREMENT = 1;
@@ -15,11 +16,18 @@ ALTER TABLE Supervisor AUTO_INCREMENT = 1;
 ALTER TABLE Miembro_equipo AUTO_INCREMENT = 1;
 
 -- Insertar datos en las tablas
-INSERT INTO Pais (Nombre, Poblacion) 
-VALUES ("España", 47), ("Reino Unido", 67), ("Alemania", 83.2), 
-("Polonia", 37.75), ("República Checa", 10.51), ("Francia", 67.75), 
-("Paises Bajos", 17.53), ("Suiza", 8.703), ("Noruega", 5.4), 
-("Suecia", 10.42), ("Italia", 59.11), ("Grecia", 10.64);
+
+INSERT INTO Divisa (Codigo, Tasa_cambio) 
+VALUES ("EUR", 1), ("GBP", 1.15),
+("CHF", 1.04), ("PLN", 0.22), ("CZK", 0.041),
+("NOK", 0.088), ("SEK", 0.086);
+
+
+INSERT INTO Pais (Nombre, Poblacion, ID_Divisa) 
+VALUES ("España", 47, 1), ("Reino Unido", 67, 2), ("Alemania", 83.2, 1), 
+("Polonia", 37.75, 4), ("República Checa", 10.51, 5), ("Francia", 67.75, 1), 
+("Paises Bajos", 17.53, 1), ("Suiza", 8.703, 3), ("Noruega", 5.4, 6), 
+("Suecia", 10.42, 7), ("Italia", 59.11, 1), ("Grecia", 10.64, 1);
 
 
 INSERT INTO Banco (Nombre, Sede) 
@@ -39,10 +47,6 @@ VALUES ("Juan", "Pérez", "1985-01-15"), ("Ana", "García", "1990-06-22"),
 ("Dalia", "Lama", "1938-01-01"), ("Vladimir", "Putin", "1952-01-01"), 
 ("Alex", "elcapo", "1987-10-06"), ("Joanne", "Rowling", "1965-07-31");
 
-INSERT INTO Divisa (Codigo, Tasa_cambio) 
-VALUES ("EUR", 1), ("GBP", 1.15),
-("CHF", 1.04), ("PLN", 0.22), ("CZK", 0.041),
-("NOK", 0.088), ("SEK", 0.086);
 
 -- PLN polonia, CHF suiza, GBP reino unido, CZK república checa, NOK noruega, SEK suecia
 
@@ -134,17 +138,20 @@ VALUES (9, 7), (9, 8);
 
 -- La cuenta 9 no la tiene nadie y Marilyn Monroe, Donald Trump, Jorge Mario Bergoglio, Dalia Lama y Joanne Rowling no tienen cuentas
 
-INSERT INTO Cliente_Banco (ID_Cliente, ID_Banco)
-VALUES (1, 7), 
-(2, 4), (2,9), 
-(3, 10), 
-(4, 1), (4, 8), 
-(5,3), (5,4), (5,5),
-(6,2),
-(7,6),
-(8,3), (8,1),
-(9,7),
-(10,5);
+
+-- Cliente_Banco no existe porque no hay relacion N:M entre Cliente y Banco
+
+-- INSERT INTO Cliente_Banco (ID_Cliente, ID_Banco)
+-- VALUES (1, 7), 
+-- (2, 4), (2,9), 
+-- (3, 10), 
+-- (4, 1), (4, 8), 
+-- (5,3), (5,4), (5,5),
+-- (6,2),
+-- (7,6),
+-- (8,3), (8,1),
+-- (9,7),
+-- (10,5);
 
 INSERT INTO Cliente_Prestamo_Banco (ID_Cliente, ID_Prestamo, ID_Banco)
 VALUES (1,1,1), (10,1,5);
