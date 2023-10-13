@@ -1,8 +1,8 @@
 var fecha = document.getElementById("fecha");
-var tabla = document.getElementById("tabla_transaccion_");
+var respuesta = document.getElementById("contenido_transaccion");
 var formulario = document.getElementById("formulario_transaccion");
 
-formulario.addEventListener("submit", function llamarServidor(e) {
+formulario.addEventListener("submit", function (e) {
     e.preventDefault(); // Evita que se recargue la página
     
     let url = "http://localhost/bd2022/trabajo-base-datos/web/main/consulta_transaccion.php";
@@ -14,8 +14,20 @@ formulario.addEventListener("submit", function llamarServidor(e) {
         .then(res => res.json())
 
         .then(data => {
-            console.log(data[0]);
-        })            
-
-}
+            console.log(data);
+            respuesta.innerHTML = ``;
+            data.forEach(element => {
+                respuesta.innerHTML += `
+                <tr scope="row">
+                <td>${element.ID_Transaccion}</td>
+                <td>${element.Fecha}</td>
+                <td>${element.Monto}</td>
+                <td>${element.Descripcion}</td>
+                <td>${element.ID_Cuenta}</td>
+                <td>${element.ID_Divisa}</td>
+                </tr>
+            `
+            })
+        })
+    }
 );
