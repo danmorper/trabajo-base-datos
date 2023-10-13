@@ -1,0 +1,3 @@
+"ID_Prestamo";"Monto";"Fecha_inicio";"Fecha_vencimiento";"ID_Cliente";"ID_Divisa"
+"1";"100.00";"2020-01-01";"2020-01-01";"1";"1"
+"2";"200.00";"2020-01-01";"2020-01-01";"10";"3"
