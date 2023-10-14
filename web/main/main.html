@@ -13,7 +13,12 @@
   <!-- Barra de navegación -->
   <div class="barra_navegacion">
   <div class="navbar navbar-expand bg-primary navbar-dark">
-    <nav class="navbar navbar-expand bg-primary navbar-dark"> <a class="navbar-brand" href="#s2"><img src="BankConsulting.jpg" alt="Logo BankConsulting" class="logo" ></a>
+    <nav class="navbar navbar-expand bg-primary navbar-dark"> 
+
+      <a class="navbar-brand" href="#s1" data-bs-toggle="tab">
+        <img src="BankConsulting.jpg" alt="Logo BankConsulting" class="logo" >
+      </a>
+
       <ul class="navbar-nav nav">
       <li class="nav-item">
       <a href="#s1" class="nav-link active" data-bs-toggle="tab">Sobre nosotros</a>
@@ -23,13 +28,13 @@
       <li class="nav-item">
       <a href="#s3" class="nav-link" data-bs-toggle="tab">Consulta transacciones</a>
       </li> 
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a href="#s4" class="nav-link" data-bs-toggle="tab">Link4</a>
-      </li>
+      </li> -->
 
 
       <!-- Dropdown no funciona -->
-      <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+      <!-- <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -42,7 +47,7 @@
             </ul>
           </li>
         </ul>
-      </div>
+      </div> -->
 
     </ul>
       </nav>
@@ -84,6 +89,8 @@
 
       <!-- Consulta nombres -->
       <div class="tab-pane" id="s2">
+        <h1>Consulta Nombres</h1>
+        <p class="cambiar">Consulta los nombres de los clientes que tengan un nombre y/o un apellido concreto.</p>
         <form action="consulta_nombres.php" method="post" id="formulario">
           <label for="nombre">Nombre: </label> 
           <input type="text" name="nombre">
@@ -122,12 +129,44 @@
         tendría dos transacciones distintas, la transacción del cliente A como negativa (pierde dinero)
         y la del cliente B como positiva (gana dinero) -->
         
-			<div class="tab-pane" id="s3">
+			<div class="tab-pane container" id="s3">
+        <h1>Consulta Transacciones</h1>
+        <p class="cambiar">Consulta las transacciones de una fecha en adelante y de una divisa concreta.</p>
         <form action="consulta_transaccion.php" method="get" id="formulario_transaccion">
-          <label for="fecha">Fecha: </label>
-          <input type="date" name="fecha" id="fecha">
+          <div class="row">
+            <div class="col-sm">
+            <label for="fecha">Fecha: </label>
+            <input type="date" name="fecha" id="fecha">
+            </div>
 
-          <input type="submit" value="Enviar" id="submit_transaccion">
+            <div class="col-sm">
+            <label for="EUR">EURO: </label>
+            <input type="radio" name="divisa" id="EUR" value="EUR">
+            <br>
+            <label for="GBP">Libra esterlina: </label>
+            <input type="radio" name="divisa" id="GBP" value="GBP">
+            <br>
+            <label for="CHF">Franco suizo: </label>
+            <input type="radio" name="divisa" id="CHF" value="CHF">
+            <br>
+            <!--Añade las opciones de la divisa polaca, republica checa, noruega y sueca-->
+            <label for="PLN">Zloty polaco: </label>
+            <input type="radio" name="divisa" id="PLN" value="PLN">
+            <br>
+            <label for="CZK">Corona checa: </label>
+            <input type="radio" name="divisa" id="CZK" value="CZK">
+            <br>
+            <label for="NOK">Corona noruega: </label>
+            <input type="radio" name="divisa" id="NOK" value="NOK">
+            <br>
+            <label for="SEK">Corona sueca: </label>
+            <input type="radio" name="divisa" id="SEK" value="SEK">
+            </div>
+            <div class="col-sm">
+              <input type="submit" value="Enviar" id="submit_transaccion">
+              <input type="reset" value="Reset">
+            </div>
+          </div>
         </form>
         <br>
 
