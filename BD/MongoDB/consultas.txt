@@ -1,45 +1,63 @@
 // Consulta 1: Obtener todos los bancos con sede en "Londres".
-EconomiaDB.Banco.find({ "Sede": "Londres" })
+db.Banco.find({ "Sede": "Londres" })
 
 // Consulta 2: Encontrar todas las cuentas de ahorro con un saldo mayor de 1000 euros.
-EconomiaDB.Cuenta.find({ "Tipo": "Ahorros", "Balance": { $gt: 1000 } })
+db.Cuenta.find({ "Tipo": "Ahorros", "Balance": { $gt: 1000 } })
 
 // Consulta 3: Buscar empleados que trabajen en un banco con sede en "Londres".
-EconomiaDB.Empleado.find({ "ID_Banco": { $in: [2, 7] } })
+db.Empleado.find({ "ID_Banco": { $in: [2, 7] } })
 
 // Consulta 4: Encontrar todos los clientes cuyo nombre sea "Juan".
-EconomiaDB.Cliente.find({ "Nombre": "Juan" })
+db.Cliente.find({ "Nombre": "Juan" })
 
 // Consulta 5: Obtener la población de todos los países con una población mayor de 50 millones de habitantes.
-EconomiaDB.Pais.find({ "Poblacion": { $gt: 50 } })
+db.Pais.find({ "Poblacion": { $gt: 50 } })
 
 // Consulta 6: Encontrar todas las cuentas en euros (EUR) con un saldo mayor de 1000 euros.
-EconomiaDB.Cuenta.find({ "Divisa.Codigo": "EUR", "Balance": { $gt: 1000 } })
+db.Cuenta.find({ "Divisa.Codigo": "EUR", "Balance": { $gt: 1000 } })
 
 // Consulta 7: Encontrar todos los empleados que no tienen supervisor.
-EconomiaDB.Empleado.find({ "Supervisor_ID": null })
+db.Empleado.find({ "Supervisor_ID": null })
 
 // Consulta 8: Encontrar los bancos que operan en más de 5 países.
-EconomiaDB.Banco.find({ "Pais": { $size: { $gt: 5 } } })
+db.Banco.aggregate([
+  {
+    $project: {
+      Nombre: 1,
+      Sede: 1,
+      NumPaises: { $size: "$Pais" }
+    }
+  },
+  {
+    $match: {
+      NumPaises: { $gt: 5 }
+    }
+  }
+])
+ó
+db.Banco.find({
+   $where: "this.Pais.length > 5"
+})
+
 
 // Consulta 9: Obtener el nombre y apellido de los empleados que trabajan en el banco con ID 1.
-EconomiaDB.Empleado.find({ "ID_Banco": 1 }, { "Nombre": 1, "Apellido": 1 })
+db.Empleado.find({ "ID_Banco": 1 }, { "Nombre": 1, "Apellido": 1 })
 
 // Consulta 10: Encontrar las cuentas de ahorro con un saldo negativo.
-EconomiaDB.Cuenta.find({ "Tipo": "Ahorros", "Balance": { $lt: 0 } })
+db.Cuenta.find({ "Tipo": "Ahorros", "Balance": { $lt: 0 } })
 
-// Consulta 10: Encontrar las cuentas de ahorro con un saldo negativo.
-EconomiaDB.Cuenta.find({ "Tipo": "Ahorros", "Balance": { $lt: 0 } })
+// Consulta 11: Encontrar las cuentas de ahorro con un saldo negativo.
+db.Cuenta.find({ "Tipo": "Ahorros", "Balance": { $lt: 0 } })
 
-// Consulta 11: Encuentra los tres bancos con el mayor número de sucursales (países en los que operan).
-EconomiaDB.Banco.aggregate([
+// Consulta 12: Encuentra los tres bancos con el mayor número de sucursales (países en los que operan).
+db.Banco.aggregate([
   { $project: { "Nombre": 1, "Numero_Paises": { $size: "$Pais" } } },
   { $sort: { "Numero_Paises": -1 } },
   { $limit: 3 }
 ])
 
-// Consulta 12: Encuentra el cliente más joven.
-EconomiaDB.Cliente.aggregate([
+// Consulta 13: Encuentra el cliente más joven.
+db.Cliente.aggregate([
   {
     $project: {
       "Nombre": 1,
@@ -59,8 +77,8 @@ EconomiaDB.Cliente.aggregate([
   { $limit: 1 }
 ])
 
-// Consulta 13: Encuentra el saldo total de todas las cuentas en euros (EUR) para cada banco.
-EconomiaDB.Cuenta.aggregate([
+// Consulta 14: Encuentra el saldo total de todas las cuentas en euros (EUR) para cada banco.
+db.Cuenta.aggregate([
   { $match: { "Divisa.Codigo": "EUR" } },
   {
     $group: {
@@ -71,7 +89,7 @@ EconomiaDB.Cuenta.aggregate([
 ])
 
 // Consulta 14: Encuentra la edad promedio de los empleados en el banco con ID 1.
-EconomiaDB.Empleado.aggregate([
+db.Empleado.aggregate([
   {
     $match: { "ID_Banco": 1 }
   },
@@ -97,6 +115,6 @@ EconomiaDB.Empleado.aggregate([
 ])
 
 // Consulta 15: Encuentra los clientes que no tienen cuentas en ningún banco.
-EconomiaDB.Cliente.find({
-  "ID_Cliente": { $nin: EconomiaDB.Cuenta.distinct("ID_Cliente") }
+db.Cliente.find({
+  "ID_Cliente": { $nin: db.Cuenta.distinct("ID_Cliente") }
 })
