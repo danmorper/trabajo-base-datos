@@ -5,6 +5,8 @@
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 
+// Prueba por si en la web no funciona
+// $nombre = 'Antonio';
 
 // db, user y pass
 $db = 'mysql:host=localhost;dbname=EconomiaDB;charset=utf8';
@@ -21,7 +23,7 @@ try {
 //se ejecuta el catch y muestra el error que se produjo en la conexión (getMessage())
 
 // Consulta a BD
-$sql = "SELECT * FROM cliente WHERE Nombre = :nombre OR Apellido = :apellido" ;
+$sql = "SELECT * FROM Cliente WHERE Nombre = :nombre OR Apellido = :apellido" ;
 
 // Preparar la consulta
 $consulta = $conn -> prepare($sql);

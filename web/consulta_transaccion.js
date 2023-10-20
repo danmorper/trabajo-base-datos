@@ -10,7 +10,7 @@ formulario.addEventListener("submit", function (e) {
 
     e.preventDefault(); // Evita que se recargue la página
     
-    let url = "http://localhost/bd2022/trabajo-base-datos/web/main/consulta_transaccion.php";
+    let url = "http://localhost/bd2022/trabajo-base-datos/web/consulta_transaccion.php";
     url = new URL(url);
     url.searchParams.append("fecha", fecha.value);
     // añade divisa si es seleccionada

@@ -13,10 +13,6 @@
     margin: 10px;
 } 
 
-.barra_navegacion {
-    margin-bottom: 115px;
-}
-
 img {
     width: 600px;
     height: 400px;
@@ -38,4 +34,8 @@ img {
 .nuevaClase2{
     width: 900px;
     height: 700px;
+}
+
+.abajo{
+    margin-top: 140px;
 }
