@@ -17,7 +17,7 @@ try {
 
 // Consulta a BD
 
-if ($divisa == "") {
+if (empty($divisa)) {
     $sql = "SELECT * FROM Transaccion WHERE Fecha > :fecha";
 
     // Preparar la consulta
@@ -25,6 +25,9 @@ if ($divisa == "") {
 
     // Asignar valores a los parámetros
     $consulta -> bindParam(':fecha', $fecha);
+
+    // Ejecutar la consulta
+    $consulta -> execute();
 
 } else {
     $sql = "SELECT T.ID_Transaccion, T.Fecha, T.Monto, T.Descripcion, T.ID_Cuenta, T.ID_Divisa
@@ -36,8 +39,22 @@ if ($divisa == "") {
 
     // Asignar valores a los parámetros
     $consulta -> bindParam(':fecha', $fecha);
-    $consulta -> bindParam(':divisa', $divisa);
+
+    // Loop through the array of divisa values and execute the query for each one
+    foreach ($divisa as $d) {
+        $consulta -> bindParam(':divisa', $d);
+        $consulta -> execute();
+
+        // Arreglo asociativo de la consulta
+        $resultado = $consulta -> fetchAll(PDO::FETCH_ASSOC);
+
+        // Paso el arreglo a JSON
+        echo json_encode($resultado);
+    }
 }
+
+// Ceramos consexión a BD
+$conn = null;
 
 // Ejecutar la consulta
 $consulta -> execute();
