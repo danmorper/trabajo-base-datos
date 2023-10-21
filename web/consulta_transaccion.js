@@ -5,7 +5,8 @@ var formulario = document.getElementById("formulario_transaccion");
 
 formulario.addEventListener("submit", function (e) {
 
-    var divisaSeleccionada = document.querySelector('input[name="divisa"]:checked');
+    var divisaSeleccionada = document.querySelectorAll('input[name="divisa"]:checked');
+    console.log(divisaSeleccionada);
     var fecha = document.getElementById("fecha");
 
     e.preventDefault(); // Evita que se recargue la página
@@ -15,15 +16,16 @@ formulario.addEventListener("submit", function (e) {
     url.searchParams.append("fecha", fecha.value);
     // añade divisa si es seleccionada
     if (divisaSeleccionada != null) {
-        var divisa = divisaSeleccionada.value;
-        url.searchParams.append("divisa", divisa);
+        divisaSeleccionada.forEach(divisa => {
+            url.searchParams.append("divisa", divisa);
+        });
     } else {
         url.searchParams.append("divisa", "");
     }
 
 
     url
-
+    console.log(url);
     fetch(url, {method: "GET"})
 
         .then(res => res.json())
