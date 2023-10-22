@@ -23,10 +23,14 @@
       <a href="#s1" class="nav-link active" data-bs-toggle="tab">Sobre nosotros</a>
       </li>
       <li class="nav-item">
-      <a href="#s2" class="nav-link" data-bs-toggle="tab">Consulta nombres</a> </li>
+      <a href="#s2" class="nav-link" data-bs-toggle="tab">Consulta nombres</a> 
+      </li>
       <li class="nav-item">
       <a href="#s3" class="nav-link" data-bs-toggle="tab">Consulta transacciones</a>
       </li> 
+      <li class="nav-item">
+      <a href="#s4" class="nav-link" data-bs-toggle="tab">Insertar datos</a>
+      </li>
       <!-- <li class="nav-item">
         <a href="#s4" class="nav-link" data-bs-toggle="tab">Link4</a>
       </li> -->
@@ -193,8 +197,39 @@
            
           </div>
         </div>
+      </div> 
+
+      <div class="tab-pane" id="s4">
+        <div class="abajo">
+          <h1>Insertar, eliminar</h1>
+          <p class="cambiar">Añade o elimina datos</p>
+          <form action="anadir_eliminar.php" method="post" id="formulario_anadir_eliminar">
+            <label for="ID_Cliente">ID_Cliente:</label>
+            <input type="number" name="ID_Cliente">
+            <br>
+            <label for="nombre">Nombre: </label> 
+            <input type="text" name="nombre">
+            <br>
+            <label for="apellido">Apellido: </label>
+            <input type="text" name="apellido">
+            <br>
+            <label for="fecha_nacimiento">Fecha de nacimiento: </label>
+            <input type="date" name="fecha_nacimiento">
+            <br>
+            <label for="ID_Cuenta">ID_Cuenta: </label>
+            <input type="number" name="ID_Cuenta">
+            <br>
+            <input type="radio" name="anadir?eliminar?" id="anadir" value="anadir">
+            <label for="anadir">Añadir</label>
+            <br>
+            <input type="radio" name="anadir?eliminar?" id="eliminar" value="eliminar">
+            <label for="eliminar">Eliminar</label>
+            <input type="submit" value="Enviar">
+            </form>
+          </div>
       </div>
-			</div>
+
+    </div>
 
     
 
@@ -208,6 +243,7 @@
     <script src="main.js"></script>
     <script src="consulta_nombres.js"></script>
     <script src="consulta_transaccion.js"></script>
+    <script src="anadir_eliminar.js"></script>
 
 </body>
 </html>
