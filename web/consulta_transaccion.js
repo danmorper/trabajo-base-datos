@@ -9,7 +9,7 @@ formulario.addEventListener("submit", function (e) {
     console.log(divisaSeleccionada);
     var fecha = document.getElementById("fecha");
 
-    e.preventDefault(); // Evita que se recargue la página
+    // e.preventDefault(); // Evita que se recargue la página
     
     let url = "http://localhost/bd2022/trabajo-base-datos/web/consulta_transaccion.php";
     url = new URL(url);
@@ -25,26 +25,32 @@ formulario.addEventListener("submit", function (e) {
 
 
     url
-    console.log(url);
+
     fetch(url, {method: "GET"})
 
         .then(res => res.json())
 
+        // .then(data => {
+        //     console.log(data);
+        //     respuesta.innerHTML = ``;
+        //     data.forEach(element => {
+        //         respuesta.innerHTML += `
+        //         <tr scope="row">
+        //         <td>${element.ID_Transaccion}</td>
+        //         <td>${element.Fecha}</td>
+        //         <td>${element.Monto}</td>
+        //         <td>${element.Descripcion}</td>
+        //         <td>${element.ID_Cuenta}</td>
+        //         <td>${element.ID_Divisa}</td>
+        //         </tr>
+        //     `
+        //     })
+        // })
+
         .then(data => {
+            
             console.log(data);
-            respuesta.innerHTML = ``;
-            data.forEach(element => {
-                respuesta.innerHTML += `
-                <tr scope="row">
-                <td>${element.ID_Transaccion}</td>
-                <td>${element.Fecha}</td>
-                <td>${element.Monto}</td>
-                <td>${element.Descripcion}</td>
-                <td>${element.ID_Cuenta}</td>
-                <td>${element.ID_Divisa}</td>
-                </tr>
-            `
-            })
-        })
-    }
+
+    });
+}
 );
