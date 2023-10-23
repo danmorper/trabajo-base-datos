@@ -1,18 +1,20 @@
-var formulario = document.getElementById("formulario_nombre");
+let formulario = document.getElementById("formulario_nombre");
 var respuesta = document.getElementById("contenido_nombre");
 
 formulario.addEventListener("submit", function (e) {
     e.preventDefault(); // Evita que se recargue la página
 
-    var datos = new FormData(formulario);
-    console.log(datos.get("nombre")); // Obtiene el valor del campo name = "nombre"
-    console.log(datos.get("apellido")); // Obtiene el valor del campo name = "apellido"
+    // let datos = new FormData(document.getElementById("formulario_nombre"));
+    let datos = new FormData(formulario);
+    // console.log(datos.get("nombre")); // Obtiene el valor del campo name = "nombre"
+    // console.log(datos.get("apellido")); // Obtiene el valor del campo name = "apellido"
+    console.log(datos)
+    console.log("hola")
     fetch("consulta_nombres.php", {
         method: "POST",
         body: datos
     })
-    // promesas
-        .then(res => res.json()) 
+        .then(res => res.json())// promesas 
         .then(data => {
             console.log(data);
             respuesta.innerHTML = ""; // Clear existing content
