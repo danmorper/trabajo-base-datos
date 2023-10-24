@@ -26,10 +26,11 @@ try {
 
 // Consulta a BD
 
-if ($anadir_eliminar == "anadir") {
+// if ($anadir_eliminar == "anadir") {
 
     // Añadir a Cliente
-    $sql = "INSERT INTO Cliente (ID_Cliente, Nombre, Apellido, Fecha_Nacimiento, ID_Cuenta) VALUES (:ID_Cliente, :Nombre, :Apellido, :Fecha_Nacimiento, :ID_Cuenta)";
+    $sql = "INSERT INTO Cliente (ID_Cliente, Nombre, Apellido, Fecha_Nacimiento, ID_Cuenta) 
+            VALUES (:ID_Cliente, :Nombre, :Apellido, :Fecha_Nacimiento, :ID_Cuenta)";
 
     $consulta = $conn->prepare($sql);
 
@@ -44,76 +45,76 @@ if ($anadir_eliminar == "anadir") {
     
 
     // Comprobar si ha pasado cuenta
-    if ($ID_Cuenta != null) {
+    // if ($ID_Cuenta != null) {
         
-        // Añadir a Cliente_Cuenta
-        $sql = "INSERT INTO Cliente_Cuenta (ID_Cliente, ID_Cuenta) VALUES (:ID_Cliente, :ID_Cuenta)";
+    //     // Añadir a Cliente_Cuenta
+    //     $sql = "INSERT INTO Cliente_Cuenta (ID_Cliente, ID_Cuenta) VALUES (:ID_Cliente, :ID_Cuenta)";
 
-        $consulta = $conn->prepare($sql);
+    //     $consulta = $conn->prepare($sql);
 
-        $consulta -> bindParam(":ID_Cliente", $ID_Cliente);
-        $consulta -> bindParam(":ID_Cuenta", $ID_Cuenta);
+    //     $consulta -> bindParam(":ID_Cliente", $ID_Cliente);
+    //     $consulta -> bindParam(":ID_Cuenta", $ID_Cuenta);
 
-        $consulta -> execute();
+    //     $consulta -> execute();
 
         
         
-    }
-} else {
+    // }
+// } // else {
 
-    // Comprobar si las cuentas asociadas que tenga el cliente está el solo y si es asi borrar la cuenta tambien
+//     // Comprobar si las cuentas asociadas que tenga el cliente está el solo y si es asi borrar la cuenta tambien
     
-    $sql = 
-    "SELECT ID_Cuenta FROM Cliente_Cuenta 
-    WHERE ID_Cuenta IN
-    (SELECT ID_Cuenta
-    FROM Cliente_Cuenta
-    GROUP BY ID_Cuenta 
-    HAVING COUNT(*) = 1)
-    AND ID_Cliente = :ID_Cliente";
+//     $sql = 
+//     "SELECT ID_Cuenta FROM Cliente_Cuenta 
+//     WHERE ID_Cuenta IN
+//     (SELECT ID_Cuenta
+//     FROM Cliente_Cuenta
+//     GROUP BY ID_Cuenta 
+//     HAVING COUNT(*) = 1)
+//     AND ID_Cliente = :ID_Cliente";
 
-    $consulta = $conn->prepare($sql);
-    $consulta -> bindParam(":ID_Cliente", $ID_Cliente);
+//     $consulta = $conn->prepare($sql);
+//     $consulta -> bindParam(":ID_Cliente", $ID_Cliente);
     
-    $consulta -> execute();
-
-    
-
-    $consulta -> fetchAll(PDO::FETCH_ASSOC);
-
-    // eliminamos todas las cuentas asociadas al cliente que solo tenga el cliente
-    foreach ($consulta as $c) {
-
-        
-
-        // Eliminar de Cliente_Cuenta
-        $sql = "DELETE FROM Cliente_Cuenta WHERE ID_Cuenta = :ID_Cuenta";
-        $consulta = $conn->prepare($sql);
-        $consulta -> bindParam("", $c);
-        $consulta -> execute();
-
-        
-
-        
-        // Eliminar de Cuenta
-        $sql = "DELETE FROM Cuenta WHERE ID_Cuenta = :ID_Cuenta";
-        $consulta = $conn->prepare($sql);
-        $consulta -> bindParam("", $c);
-        $consulta -> execute();
-
-        
-    }
+//     $consulta -> execute();
 
     
 
-    // Eliminar de Cliente
-    $sql = "DELETE FROM Cliente WHERE ID_Cliente = :ID_Cliente";
+//     $consulta -> fetchAll(PDO::FETCH_ASSOC);
 
-    $consulta = $conn->prepare($sql);
-    $consulta -> bindParam(":ID_Cliente", $ID_Cliente);
-    $consulta -> execute();
+//     // eliminamos todas las cuentas asociadas al cliente que solo tenga el cliente
+//     foreach ($consulta as $c) {
+
+        
+
+//         // Eliminar de Cliente_Cuenta
+//         $sql = "DELETE FROM Cliente_Cuenta WHERE ID_Cuenta = :ID_Cuenta";
+//         $consulta = $conn->prepare($sql);
+//         $consulta -> bindParam("", $c);
+//         $consulta -> execute();
+
+        
+
+        
+//         // Eliminar de Cuenta
+//         $sql = "DELETE FROM Cuenta WHERE ID_Cuenta = :ID_Cuenta";
+//         $consulta = $conn->prepare($sql);
+//         $consulta -> bindParam("", $c);
+//         $consulta -> execute();
+
+        
+//     }
+
+    
+
+//     // Eliminar de Cliente
+//     $sql = "DELETE FROM Cliente WHERE ID_Cliente = :ID_Cliente";
+
+//     $consulta = $conn->prepare($sql);
+//     $consulta -> bindParam(":ID_Cliente", $ID_Cliente);
+//     $consulta -> execute();
 
     $conn = null;
-}
+// }
 
 ?>

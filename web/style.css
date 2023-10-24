@@ -39,3 +39,25 @@ img {
 .abajo{
     margin-top: 140px;
 }
+
+/* Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+.grid-item {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.grid-item2 {
+    margin: 5px;
+}

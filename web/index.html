@@ -205,32 +205,50 @@
           <h1>Insertar, eliminar</h1>
           <p class="cambiar">Añade o elimina datos</p>
           <form action="anadir_eliminar.php" method="post" id="formulario_anadir_eliminar">
-            <label for="ID_Cliente">ID_Cliente:</label>
-            <input type="number" name="ID_Cliente">
-            <br>
-            <label for="nombre">Nombre: </label> 
-            <input type="text" name="nombre">
-            <br>
-            <label for="apellido">Apellido: </label>
-            <input type="text" name="apellido">
-            <br>
-            <label for="fecha_nacimiento">Fecha de nacimiento: </label>
-            <input type="date" name="fecha_nacimiento">
-            <br>
-            <label for="ID_Cuenta">ID_Cuenta: </label>
-            <input type="number" name="ID_Cuenta">
-            <br>
-            <input type="radio" name="anadir?eliminar?" id="anadir" value="anadir">
-            <label for="anadir">Añadir</label>
-            <br>
-            <input type="radio" name="anadir?eliminar?" id="eliminar" value="eliminar">
-            <label for="eliminar">Eliminar</label>
-            <input type="submit" value="Enviar">
-            </form>
+            <div class="grid-container">
+              <div class="grid-item">
+                  <div class="grid-item2">
+                    <label for="ID_Cliente">ID_Cliente:</label>
+                    <input type="number" name="ID_Cliente" value="55">
+                    <br>
+                    <label for="nombre">Nombre: </label> 
+                    <input type="text" name="nombre" value="Daniel">
+                    <br>
+                    <label for="apellido">Apellido: </label>
+                    <input type="text" name="apellido" value="Moreno">
+                    <br>
+                  </div>
+              </div>
+              <div class="grid-container">
+                <div class="grid-item2">
+                  <label for="fecha_nacimiento">Fecha de nacimiento: </label>
+                  <input type="date" name="fecha_nacimiento" value="2000-06-28">
+                  <br>
+                  <label for="ID_Cuenta">ID_Cuenta: </label>
+                  <input type="number" name="ID_Cuenta" value="9">
+                  <br>
+                  <input type="radio" name="anadir?eliminar?" id="anadir" value="anadir" checked>
+                  <label for="anadir">Añadir</label>
+                  <br>
+                  <input type="radio" name="anadir?eliminar?" id="eliminar" value="eliminar">
+                  <label for="eliminar">Eliminar</label>
+                </div>
+              </div>
+              <div class="grid-container">
+                <div class="grid-item2">
+                  <input type="submit" value="Enviar">
+                </div>
+              </div>
+              </form>
+              </div>
           </div>
-      </div>
-
-    </div>
+        </div>
+        </div>
+            
+              
+            
+            
+     
 
     
 
