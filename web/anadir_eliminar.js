@@ -3,7 +3,9 @@ var formulario_anadir_eliminar = document.getElementById("formulario_anadir_elim
 formulario_anadir_eliminar.addEventListener("submit", function (e) {
     e.preventDefault(); // Evita que se recargue la página
     
-    var datos = new FormData(formulario);
+    var datos = new FormData(formulario_anadir_eliminar);
+    console.log(datos);
+    console.log(datos.get("anadir?eliminar?"));
     if (datos.get("anadir?eliminar?") == null) {
         alert("Seleccione si desea añadir o eliminar");
     } else {
