@@ -32,8 +32,23 @@ imagenes.forEach((imagen) => {
 const boton = document.querySelector("#boton-sugerencia");
 let sugerencias = document.querySelector("#anadir-sugerencias");
 boton.addEventListener("click", () => {
-    console.log("Has hecho click en el botón");
-    const div = document.createElement("div");
-    div.innerHTML = "<div> <p>¡Gracias por tu sugerencia!</p> </div>";
-    document.body.appendChild(div);
+
+    // Tomo titulo y texto de textarea
+    let titulo = document.querySelector("#titulo").value;
+    let texto = document.querySelector("#sugerencia").value;
+    console.log(texto);
+
+    // Creo 3 div uno para el titulo, otro para el texto y otro para los dos anteriores
+    let div = document.createElement("div");
+    let div_titulo = document.createElement("div");
+    let div_texto = document.createElement("div");
+    div_titulo.innerHTML = "<h3>" + titulo + "</h3>";
+    div_texto.innerHTML = "<p>" + texto + "</p>";
+    div.appendChild(div_titulo);
+    div.appendChild(div_texto);
+    sugerencias.appendChild(div);
+
+    // Limpio titulo y textarea
+    document.getElementById("titulo").value = "";
+    document.querySelector("#sugerencia").value = "";
 });
