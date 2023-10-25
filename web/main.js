@@ -30,8 +30,6 @@ imagenes.forEach((imagen) => {
 
 const boton = document.querySelector("#boton-sugerencia");
 let sugerencias = document.querySelector("#anadir-sugerencias");
-let sugerencias_div = document.querySelectorAll(".sugerencia"); // Definimos la variable aquí para que esté disponible en todo el archivo
-
 let num_sugerencias = 0; // Hay 0 sugerencias
 
 boton.addEventListener("click", () => {
@@ -61,27 +59,14 @@ boton.addEventListener("click", () => {
         document.getElementById(`texto${num_sugerencias}`).style.display = "none";
 
     }
-    sugerencias_div = document.querySelectorAll(".sugerencia"); // Actualizamos la variable con las sugerencias que hemos añadido
 });
-
-//Mostrar texto cuando pinches sobre el titulo de la sugerencia
-
-// No se puede hacer asi ya que no actualiza la variable sugerencias_div. Esto se complica :(
-// sugerencias_div.forEach((sugerencia) => {
-//     console.log(sugerencia);
-//     sugerencia.addEventListener("click", () => {
-//         let titulo = sugerencia.querySelector("h3");
-//         let texto = sugerencia.querySelector("p");
-//         texto.style.display = "block";
-//     });
-// });
 
 
 // Funcion para mostrar el texto de la sugerencia
 function aparece(event) {
     let idtitulo = event.target.id; // Cojo el id del titulo
     console.log(idtitulo[6]);
-        let texto = document.getElementById("texto"+idtitulo[6]);
+    let texto = document.getElementById("texto"+idtitulo[6]);
     // console.log(texto);
     // console.log(texto.style.display);
     if (texto.style.display == "block") {
