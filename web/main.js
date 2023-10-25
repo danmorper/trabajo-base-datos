@@ -26,3 +26,14 @@ imagenes.forEach((imagen) => {
     });
 }
 );
+
+// Añadir div cuando se haga click en el botón con id "boton-sugerencia"
+
+const boton = document.querySelector("#boton-sugerencia");
+let sugerencias = document.querySelector("#anadir-sugerencias");
+boton.addEventListener("click", () => {
+    console.log("Has hecho click en el botón");
+    const div = document.createElement("div");
+    div.innerHTML = "<div> <p>¡Gracias por tu sugerencia!</p> </div>";
+    document.body.appendChild(div);
+});
