@@ -9,7 +9,6 @@ formulario.addEventListener("submit", function (e) {
     // console.log(datos.get("nombre")); // Obtiene el valor del campo name = "nombre"
     // console.log(datos.get("apellido")); // Obtiene el valor del campo name = "apellido"
     console.log(datos)
-    console.log("hola")
     fetch("consulta_nombres.php", {
         method: "POST",
         body: datos
