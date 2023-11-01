@@ -22,3 +22,25 @@ formulario_anadir_eliminar.addEventListener("submit", function (e) {
     });
     }
 });
+
+// getelementbyid con id anadir
+// getelementbyid con id eliminar
+
+var anadir = document.getElementById("anadir");
+var eliminar = document.getElementById("eliminar");
+
+// si eliminar esta seleccionado, no se puede introducir nombre, apllido, fecha_nacimiento, ID_Cuenta
+
+anadir.addEventListener("click", function () {
+    document.getElementById("nombre_anadir_eliminar").disabled = false;
+    document.getElementById("apellido_anadir_eliminar").disabled = false;
+    document.getElementById("fecha_anadir_eliminar").disabled = false;
+    document.getElementById("ID_Cuenta_anadir_eliminar").disabled = false;
+});
+
+eliminar.addEventListener("click", function () {
+    document.getElementById("nombre_anadir_eliminar").disabled = true;
+    document.getElementById("apellido_anadir_eliminar").disabled = true;
+    document.getElementById("fecha_anadir_eliminar").disabled = true;
+    document.getElementById("ID_Cuenta_anadir_eliminar").disabled = true;
+});
