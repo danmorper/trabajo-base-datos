@@ -1,0 +1,39 @@
+# Archivos y directorios generados automáticamente
+node_modules/
+.DS_Store
+.vscode/
+.idea/
+
+# Archivos compilados
+*.class
+*.jar
+*.war
+*.pyc
+
+# Directorio de salida de compilación
+target/
+
+# Dependencias de Node.js
+/node_modules
+
+# Dependencias de Python
+/venv
+
+# Configuración de Visual Studio Code
+.vscode/
+
+# Configuración de IntelliJ IDEA
+.idea/
+
+# Archivos de registro
+*.log
+*.log.*
+.log/
+
+# Archivos temporales
+.tmp/
+.temp/
+
+# Archivos con contraseñas o información sensible
+.env
+secrets.yml
