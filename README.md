@@ -1,8 +1,8 @@
 # Banking Consultancy
 ## SQL
-Database: `EconomiaDB``
+Database: `EconomiaDB`
 
-This project involves the creation and management of a database named `EconomiaDB``, designed specifically for a banking consultancy. The database focuses on storing and processing information related to banks, currencies, countries, clients, and financial transactions. MySQL is used as the database management system.
+This project involves the creation and management of a database named `EconomiaDB`, designed specifically for a banking consultancy. The database focuses on storing and processing information related to banks, currencies, countries, clients, and financial transactions. MySQL is used as the database management system.
 
 ### Structure and Design of Tables
 File: `BD/economia.sql`
